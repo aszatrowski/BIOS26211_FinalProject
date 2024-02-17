@@ -12,5 +12,7 @@
 
 ## File explainer:
 * The files downloaded from GEO (accessions `12288`, `20680`, and `20681`) come in a json-like matrix format where each column vector is introduced by an `!` and then the cells are tab-delimited
-    * I was able to read these in with `read.table()` in R but all the categorical data (including CAD index) appears to be missing. 
-    
+* The `*_series_matrix.txt` data are the raw json-like files; `*_no-metadata.txt` is manually preprocessed to remove the metadata and make reading easier
+* I was able to read these in with `read.table()` in R but all the categorical data (including CAD index) appears to be missing; it results in a matrix table with numerical gene IDs and samples. This can be clustered but we'll obviously need to find a way to add the labels in order to validate them.
+    * This file is exported as `GSE20680.csv` and should be usable.
+* The one `.gz` compressed file won't uncompress for some reason. No idea why.
