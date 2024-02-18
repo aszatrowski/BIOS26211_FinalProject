@@ -2,23 +2,23 @@
 **Theresa Christiansen, Niranjan Joshi, Romy Li, Austin Szatrowski**
 
 ## Tasks
-[ ] Figure out what the numeric gene IDs are
-[ ] DR & Cluster each dataset individually - AS working on this
-    [ ] GSE20680:
-        [x] Data wrangling
-        [x] PCA (_doesn't look too great... we'll see how the clustering goes -AS_)
-        [ ] $k$-means clustering
-        [ ] Jaccard index & Cohen's $\kappa$
-    - [ ] GSE20681:
-        - [ ] Data wrangling
-        - [ ] PCA
-        - [ ] $k$-means clustering
-        - [ ] Jaccard index & Cohen's $\kappa$
-    - [ ] GSE12288:
-        - [ ] Data wrangling (_can't get the `.gz` to uncompress LOL_)
-        - [ ] PCA
-        - [ ] $k$-means clustering
-        - [ ] Jaccard index & Cohen's $\kappa$
+* [ ] Figure out what the numeric gene IDs are
+* [ ] DR & Cluster each dataset individually - AS working on this
+    * [ ] GSE20680:
+        * [&check;] Data wrangling
+        * [&check;] PCA (_doesn't look too great... we'll see how the clustering goes -AS_)
+        * [ ] $k$-means clustering
+        * [ ] Jaccard index & Cohen's $\kappa$
+    * [ ] GSE20681:
+        * [ ] Data wrangling
+        * [ ] PCA
+        * [ ] $k$-means clustering
+        * [ ] Jaccard index & Cohen's $\kappa$
+    * [ ] GSE12288:
+        * [ ] Data wrangling (_can't get the `.gz` to uncompress LOL_)
+        * [ ] PCA
+        * [ ] $k$-means clustering
+        * [ ] Jaccard index & Cohen's $\kappa$
     * Label points with CAD index (`GEO20680` and `GEO20681` have 3-point indices, so I think this is a good place to start)
     * Run Cohen's $\kappa$ and Jaccard to assess correlation between clusters and true labels
 [] Get batch effect removal for harmonization working (see paper, there's an R package for this)
