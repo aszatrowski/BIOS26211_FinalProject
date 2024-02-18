@@ -2,13 +2,13 @@
 **Theresa Christiansen, Niranjan Joshi, Romy Li, Austin Szatrowski**
 
 ## Tasks
-- [ ] Figure out what the numeric gene IDs are
-- [ ] DR & Cluster each dataset individually - AS working on this
-    - [ ] GSE20680:
-        - [x] Data wrangling
-        - [x] PCA (_doesn't look too great... we'll see how the clustering goes -AS_)
-        - [ ] $k$-means clustering
-        - [ ] Jaccard index & Cohen's $\kappa$
+[ ] Figure out what the numeric gene IDs are
+[ ] DR & Cluster each dataset individually - AS working on this
+    [ ] GSE20680:
+        [x] Data wrangling
+        [x] PCA (_doesn't look too great... we'll see how the clustering goes -AS_)
+        [ ] $k$-means clustering
+        [ ] Jaccard index & Cohen's $\kappa$
     - [ ] GSE20681:
         - [ ] Data wrangling
         - [ ] PCA
