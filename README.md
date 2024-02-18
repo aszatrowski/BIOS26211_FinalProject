@@ -23,6 +23,7 @@
     * Run Cohen's $\kappa$ and Jaccard to assess correlation between clusters and true labels
 [] Get batch effect removal for harmonization working (see paper, there's an R package for this)
     * Then harmonize datasets and run clustering on all
+* Maybe filter genes to those implicated in CVD/lipid metabolism/atherosclerotic plaque formation to see if that strengthens the effect?
 
 ## File explainer:
 * The files downloaded from GEO (accessions `12288`, `20680`, and `20681`) come in a json-like matrix format where each column vector is introduced by an `!` and then the cells are tab-delimited
