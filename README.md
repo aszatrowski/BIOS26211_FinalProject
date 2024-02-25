@@ -12,6 +12,7 @@
         * [ ] Cohen's $\kappa$
 * [ ] Consensus clustering and hyperparameter tuning (Theresa)
 * [ ] Batch effect removal (Austin)
+    * [ ] reminder: update PCA1 to import reverse-tidy data since that's what the files need to be for RemoveBatchEffect()
 * [ ] tSNE & UMAP in place of PCA (Niranjan)
 * [ ] Gene by gene differential expression (Romy)
  
