@@ -1,0 +1,31 @@
+# Cohort Effects Across `GSE20680` & `GSE20681`
+## Import packages and datasets
+```{r}
+library(tidyverse)
+library(limma)
+library(sva)
+```
+```{r}
+path = "../GEOData/"
+
+gse20680 <- read_csv(paste0(path, "GSE20680_RBEReady.csv"))
+gse20681 <- read_csv(paste0(path, "GSE20681_RBEReady.csv"))
+```
+## Compute gene-wise expression means
+```{r}
+gse20680_means <- rowMeans(gse20680)
+gse20681_means <- rowMeans(gse20681)
+
+gene_indices = seq(1:nrow(gse20680))
+```
+## Plot expression means for both cohorts
+```{r}
+plot(gene_indices, log(gse20680_means), col = "#ee9211")
+points(gene_indices, log(gse20681_means), col = "#00aaffb7")
+```
+```{r}
+gse20680_fit = lm(gse20680_means ~ gene_indices)
+print(gse20680_fit)
+gse20681_fit = lm(gse20681_means ~ gene_indices)
+print(gse20681_fit)
+```
