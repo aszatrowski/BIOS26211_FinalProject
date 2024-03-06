@@ -91,7 +91,7 @@ icl = calcICL(results,title=title,plot=NULL)
 resultskm = ConsensusClusterPlus(combinedt,maxK=5,reps=100,pItem=0.8,pFeature=1,title=title,clusterAlg="km",distance="pearson",seed=1262118388.71279,plot=NULL)
 icl = calcICL(resultskm,title=title,plot=NULL)
 
-#Hierarchical Clustering Assignments for top 5000 differentially expressed genes
+#Clustering Assignments for top 5000 differentially expressed genes
 #Import ctrl_vs_case.csv
 genes = ctrl_vs_case[1:20000,2] #from Romy's analysis
 combined <- combinedGSE
@@ -119,7 +119,32 @@ write.csv(gene_clusters, file = "ClusteredDEGs2.csv", row.names = FALSE)
 cluster1 = gene_clusters$Gene[gene_clusters$Cluster == 1]
 cluster2 = gene_clusters$Gene[gene_clusters$Cluster == 2]
 cluster3 = gene_clusters$Gene[gene_clusters$Cluster == 3]
-print(cluster1[1:11])
-print(cluster2[1:11])
-print(cluster3[1:11])
+print(cluster1[1:10])
+print(cluster2[1:10])
+print(cluster3[1:10])
 
+#Make distance matrix for Kmeans clustering
+diffgeneskm <- combined[,genes]
+diffgeneskm <- sweep(diffgenes, 1, apply(combined, 1, median, na.rm = TRUE))
+print(diffgeneskm[1:5, 1:5])
+diffgeneskm <- as.matrix(diffgeneskm)
+diffgeneskm = as.dist(diffgeneskm)
+
+#Run Kmeans Clustering
+k <- 3
+diffgeneskmt = t(diffgenes)
+kmeans_result <- kmeans(diffgenest, centers = k)
+print(kmeans_result)
+gene_clusters <- data.frame(Gene = genes, Cluster = kmeans_result[["cluster"]])
+
+plot(diffgenest, col = kmeans_result$cluster, pch = 16, main = "K-means Clustering of k=3 subgroups by gene", xlab = "X", ylab = "Y")
+points(kmeans_result$centers, col = 1:k, pch = 8, cex = 2)  # Plot cluster centers
+legend("topright", legend = paste("Cluster", 1:k), col = 1:k, pch = 16) 
+
+#Print top 10 gene names for each cluster
+cluster1 = gene_clusters$Gene[gene_clusters$Cluster == 1]
+cluster2 = gene_clusters$Gene[gene_clusters$Cluster == 2]
+cluster3 = gene_clusters$Gene[gene_clusters$Cluster == 3]
+print(cluster1[1:10])
+print(cluster2[1:10])
+print(cluster3[1:10])
