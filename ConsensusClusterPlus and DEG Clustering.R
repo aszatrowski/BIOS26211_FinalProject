@@ -2,7 +2,7 @@
 #Note: some debugging done with ChatGPT bc I am not great at R syntax
 #Citation: Wilkerson, M. D., & Hayes, D. N. (2010). ConsensusClusterPlus: a class discovery tool with confidence assessments and item tracking. Bioinformatics (Oxford, England), 26(12), 1572–1573. https://doi.org/10.1093/bioinformatics/btq170
 #This file is consensus clustering on each of the two datasets and the combined dataset
-#It also does hierarchical clustering on the top 50% of differentially expressed genes (can't do all bc memory)
+#It also does Kmeans clustering on the entire dataset ordered by Differential Gene expression (case vs. ctrl)
 #The top 10 most differentially expressed genes per cluster are labeled
 
 #Install Consensus Cluster Plus
